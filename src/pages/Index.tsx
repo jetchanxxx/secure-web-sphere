@@ -1,5 +1,5 @@
 
-import { Shield, Globe, Lock, Key, Wifi, ArrowRight } from "lucide-react";
+import { Shield, Globe, Lock, Key, Wifi, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
