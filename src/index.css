@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +36,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +90,67 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 shadow-glass;
+  }
+  
+  .glass-dark {
+    @apply backdrop-blur-md bg-vpn-dark/90 border border-white/10;
+  }
+  
+  .vpn-container {
+    @apply container mx-auto px-4 md:px-8 max-w-7xl;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+  
+  .heading-lg {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  
+  .heading-md {
+    @apply text-2xl md:text-3xl font-bold;
+  }
+  
+  .heading-sm {
+    @apply text-xl md:text-2xl font-bold;
+  }
+  
+  .paragraph {
+    @apply text-base md:text-lg leading-relaxed text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  .fade-in {
+    @apply animate-fade-in;
+  }
+  
+  .fade-in-up {
+    @apply animate-fade-in-up;
+  }
+  
+  .slide-in-right {
+    @apply animate-slide-in-right;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:animate-card-hover hover:shadow-lg;
   }
 }
